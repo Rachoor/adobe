@@ -1,0 +1,7 @@
+### GET access token
+# GET http://localhost:3000/transform/token
+GET http://localhost:3000/image-transform/hello-world
+
+
+################################
+GET http://localhost:3000/transform/token
