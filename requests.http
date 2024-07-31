@@ -5,3 +5,18 @@ GET http://localhost:3000/image-transform/hello-world
 
 ################################
 GET http://localhost:3000/transform/token
+
+
+#### SEND FILE
+POST http://localhost:3000/transform
+
+{
+    image:{
+    lastModified: 1680057531000
+    lastModifiedDate : Tue Mar 28 2023 22:38:51 GMT-0400 (Eastern Daylight Time) {}
+    name: "9e34b0d3-f1d8-4a28-933c-293092e009f2.jpg"
+    size: 110060
+    type: "image/jpeg"
+    webkitRelativePath: ""
+    }
+}

@@ -43,7 +43,6 @@ let FireflyService = class FireflyService {
             console.error('Error fetching access token:', error);
             throw new common_1.HttpException('Failed to fetch access token', common_1.HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        console.log('response', response);
         this.accessToken = response.data.access_token;
         const expiresIn = response.data.expires_in;
         this.tokenExpirationTime = Date.now() + expiresIn * 1000;
@@ -63,7 +62,6 @@ let FireflyService = class FireflyService {
     }
     async sendToFirefly(filePath) {
         const accessToken = await this.getAccessToken();
-        console.log('accessToken', accessToken);
         const form = new FormData();
         form.append('file', fs.createReadStream(filePath));
         return this.httpService.post('https://firefly.adobe.io/v2/effects', form, {

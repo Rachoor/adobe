@@ -1,8 +1,14 @@
 /// <reference types="multer" />
+import { TransformService } from './transform.service';
 import { FireflyService } from './firefly.service';
 export declare class TransformController {
     private fireflyService;
-    constructor(fireflyService: FireflyService);
+    private transformService;
+    constructor(fireflyService: FireflyService, transformService: TransformService);
     getToken(): Promise<void>;
-    transformImage(file: Express.Multer.File): Promise<any>;
+    handleImageUPload(file: Express.Multer.File): {
+        message: string;
+        file: Promise<any>;
+    };
+    generateImages(): Promise<any>;
 }

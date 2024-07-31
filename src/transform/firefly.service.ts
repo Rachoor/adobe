@@ -64,7 +64,7 @@ export class FireflyService {
       throw new HttpException('Failed to fetch access token', HttpStatus.INTERNAL_SERVER_ERROR);
     }
         
-        console.log('response', response);
+        // console.log('response', response);
 
     this.accessToken = response.data.access_token;
     const expiresIn = response.data.expires_in; // typically in seconds
@@ -92,7 +92,7 @@ export class FireflyService {
     
     async sendToFirefly(filePath: string): Promise<Observable<AxiosResponse<any, any>>> {
         const accessToken = await this.getAccessToken();
-        console.log('accessToken', accessToken);
+        // console.log('accessToken', accessToken);
     const form = new FormData();
     form.append('file', fs.createReadStream(filePath));
 
@@ -107,4 +107,7 @@ export class FireflyService {
     createHttpUrl() {
     
     }
+  
+  
+  
 }
